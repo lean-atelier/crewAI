@@ -28,15 +28,11 @@ CrewAI is designed to enable AI agents to assume roles, share goals, and operate
 To get started with CrewAI, follow these simple steps:
 
 1. **Installation**:
-
-```shell
-pip install crewai
-```
-
-The example below also uses duckduckgo, so also install that
-```shell
-pip install duckduckgo-search
-```
+    1. Install VSCode and Docker
+    2. Open project in VSCode
+    3. `Cmd + Shift + P`: `Dev Containers: Reopen in Container`
+    4. Create `.env` file: `cp .env.example .env`
+    5. Set OPENAI_API_KEY variable in `.env` file
 
 2. **Setting Up Your Crew**:
 
@@ -130,32 +126,41 @@ Currently the only supported process is `Process.sequential`, where one task is 
 ![CrewAI Mind Map](./docs/crewAI-mindmap.png "CrewAI Mind Map")
 
 ## Examples
+
 You can test different real life examples of AI crews [in the examples repo](https://github.com/joaomdmoura/crewAI-examples?tab=readme-ov-file)
 
 ### Code
+
 - [Trip Planner](https://github.com/joaomdmoura/crewAI-examples/tree/main/trip_planner)
 - [Stock Analysis](https://github.com/joaomdmoura/crewAI-examples/tree/main/stock_analysis)
 - [Landing Page Generator](https://github.com/joaomdmoura/crewAI-examples/tree/main/landing_page_generator)
 - [Having Human input on the execution](https://github.com/joaomdmoura/crewAI/wiki/Human-Input-on-Execution)
 
 ### Video
+
 #### Quick Tutorial
+
 [![CrewAI Tutorial](https://img.youtube.com/vi/tnejrr-0a94/0.jpg)](https://www.youtube.com/watch?v=tnejrr-0a94 "CrewAI Tutorial")
 
 #### Trip Planner
+
 [![Trip Planner](https://img.youtube.com/vi/xis7rWp-hjs/0.jpg)](https://www.youtube.com/watch?v=xis7rWp-hjs "Trip Planner")
 
 #### Stock Analysis
+
 [![Stock Analysis](https://img.youtube.com/vi/e0Uj4yWdaAg/0.jpg)](https://www.youtube.com/watch?v=e0Uj4yWdaAg "Stock Analysis")
 
 ## Local Open Source Models
+
 crewAI supports integration with local models, thorugh tools such as [Ollama](https://ollama.ai/), for enhanced flexibility and customization. This allows you to utilize your own models, which can be particularly useful for specialized tasks or data privacy concerns.
 
 ### Setting Up Ollama
+
 - **Install Ollama**: Ensure that Ollama is properly installed in your environment. Follow the installation guide provided by Ollama for detailed instructions.
 - **Configure Ollama**: Set up Ollama to work with your local model. You will probably need to [tweak the model using a Modelfile](https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md). I'd recommend adding `Observation` as a stop word and playing with `top_p` and `temperature`.
 
 ### Integrating Ollama with CrewAI
+
 - Instantiate Ollama Model: Create an instance of the Ollama model. You can specify the model and the base URL during instantiation. For example:
 
 ```python
@@ -196,12 +201,14 @@ CrewAI is open-source and we welcome contributions. If you're looking to contrib
 - We appreciate your input!
 
 ### Installing Dependencies
+
 ```bash
 poetry lock
 poetry install
 ```
 
 ### Virtual Env
+
 ```bash
 poetry shell
 ```
@@ -213,25 +220,28 @@ pre-commit install
 ```
 
 ### Running Tests
+
 ```bash
 poetry run pytest
 ```
 
 ### Packaging
+
 ```bash
 poetry build
 ```
 
 ### Installing Locally
+
 ```bash
 pip install dist/*.tar.gz
 ```
 
 ## Hire Consulting
+
 I, [@joaomdmoura](https://github.com/joaomdmoura) (creator or crewAI), offer consulting through my LLC ([AI Nest Labs](https://ainestlabs.com)).
 If you are interested on hiring weekly hours with me on a retainer, feel free to email me at [joao@ainestlabs.com](mailto:joao@ainestlabs.com)
 
 ## License
+
 CrewAI is released under the MIT License
-
-
